@@ -1,6 +1,10 @@
-resource "github_repository" "this" {
-  name               = "infrastructure-dev"
-  description        = "backend dev repository"
-  auto_init          = true
-  gitignore_template = "Terraform"
+resource "aws_vpc" "this" {
+  cidr_block           = "10.0.0.0/16"
+  enable_dns_support   = true
+  enable_dns_hostnames = true
+  
+  tags = {
+    Name        = "infrastructure-dev"
+    Description = "infrastructure dev vpc"
+  }
 }

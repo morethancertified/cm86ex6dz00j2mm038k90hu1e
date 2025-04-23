@@ -30,5 +30,6 @@
     "awsregion": "export AWS_DEFAULT_REGION='us-east-1' >> ~/.bashrc",
     "startls": "localstack start -d",
     "gitpull": "git pull origin main"
-  }
+  },
+  "postStartCommand": "echo 'deployed' > deployed.log"
 }

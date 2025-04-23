@@ -28,8 +28,10 @@
     "tfalias": "echo \"alias terraform='tflocal'\" >> ~/.bashrc",
     "awsalias": "echo \"alias aws='awslocal'\" >> ~/.bashrc",
     "awsregion": "export AWS_DEFAULT_REGION='us-east-1' >> ~/.bashrc",
-    "startls": "localstack start -d",
-    "gitpull": "git pull origin main"
+    "gitpull": "git pull origin main",
   },
-  "postStartCommand": "echo 'deployed' > deployed.log"
+  "postStartCommand": {
+    "startls": "localstack start -d",
+    "deployed": "echo 'deployed' >> deployed.log"
+  }
 }
